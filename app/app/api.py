@@ -12,15 +12,15 @@ chain = Blockchain()
 from app import app
 #A login system that stores people's addresses
 
-@app.route('/')
+@app.route('/api')
 def main():
     return render_template('base.html')
 
-@app.route('/transactions', methods=['GET'])
+@app.route('/api/transactions', methods=['GET'])
 def get_transactions():
     return jsonify(chain.current_transactions), 200
 
-@app.route('/transactions/new', methods=['POST'])
+@app.route('/api/transactions/new', methods=['POST'])
 def new_transaction_request():
     #return jsonify(values), 201
     keymap = {
@@ -43,7 +43,7 @@ def new_transaction_request():
     return jsonify(message), 201
 
 
-@app.route('/mine', methods=['GET'])
+@app.route('/api/mine', methods=['GET'])
 def mine():
     proof = chain.proof_of_work(chain.last_block['proof']) #obtain proof of work
     flash('Mining block...')
@@ -57,7 +57,7 @@ def mine():
 
     return jsonify(created_block), 200
 
-@app.route('/chain', methods=['GET'])
+@app.route('/api/chain', methods=['GET'])
 def return_chain():
     if Blockchain.valid_blockchain(chain):
         request = {
@@ -67,7 +67,7 @@ def return_chain():
         return jsonify(request), 200
     return None, 404
 
-@app.route('/nodes/register', methods=['POST'])
+@app.route('/api/nodes/register', methods=['POST'])
 def register_new_node():
     new_node = chain.register_node(request.remote_addr)
     response = {
@@ -75,7 +75,7 @@ def register_new_node():
         }
     return jsonify(response), 200
 
-@app.route('/nodes/resolve', methods=['GET'])
+@app.route('/api/nodes/resolve', methods=['GET'])
 def consensus():
     response = {
         'response': '',
