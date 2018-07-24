@@ -1,7 +1,9 @@
 # blockchains
 This repository holds a simulation of a network blockchain using Python/Flask.
+
 ##Instructions##
 1. Log in here (To be created)
+
 ###Current Roadmap:###
 - [x] Create the blockchain class
 - [x] Create a RESTful API for the blockchain
