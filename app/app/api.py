@@ -14,7 +14,7 @@ from app import app
 
 @app.route('/api')
 def main():
-    return render_template('base.html')
+    return render_template('api/base.html')
 
 @app.route('/api/transactions', methods=['GET'])
 def get_transactions():
