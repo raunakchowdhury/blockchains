@@ -1,0 +1,10 @@
+Create a transaction: <br><br>
+  <form action="{{ url_for('send_transaction') }}" method="POST">
+    Username: <br>
+    <input type="text" name="user"><br>
+    Password: <br>
+    <input type="text" name="password"><br><br>
+    Recipient User: <br>
+    <input type="text" name="recipient"><br><br>
+    <input type="submit" value="Submit">
+  </form>

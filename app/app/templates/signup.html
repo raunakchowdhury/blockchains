@@ -1,0 +1,23 @@
+<head></head>
+<body>
+  Create an account: <br><br>
+    <form action="{{ url_for('create_account') }}" method="POST">
+      Username: <br>
+      <input type="text" name="user"><br>
+      Email: <br>
+      <input type="text" name="email"><br>
+      Password: <br>
+      <input type="text" name="password"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  Log In: <br><br>
+    <form action="{{ url_for('login') }}" method="POST">
+      Username: <br>
+      <input type="text" name="user"><br>
+      Email: <br>
+      <input type="text" name="email"><br>
+      Password: <br>
+      <input type="text" name="password"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>

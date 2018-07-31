@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 from models import *
 db.create_all()
 
-from app import api, routes
+from app import api, routes, account_manager
 
 #if __name__ == '__main__':
 #    app.run(debug=True)
